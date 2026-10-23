@@ -1,0 +1,98 @@
+{
+  "name": "Mahesh Basavaraj",
+  "title": "Assistant Professor · AI Researcher · Former Enterprise Engineer",
+  "tagline": "Bridging production-grade software engineering and frontier AI research — from banking platforms at Infosys and Accenture to Agentic AI in the classroom.",
+  "location": "Bengaluru, Karnataka, India",
+  "phone": "+91 98866 42542",
+  "emails": ["mahesh-csds@dsatm.edu.in", "BMaheshbasavaraj@gmail.com"],
+  "links": [
+    {"label": "LinkedIn", "handle": "in/mahesh-basavaraj-57189515", "url": "https://www.linkedin.com/in/mahesh-basavaraj-57189515/"},
+    {"label": "YouTube", "handle": "Echoes of AI", "url": "https://www.youtube.com/@MaheshBasavaraj-q4g"},
+    {"label": "Substack", "handle": "@maheshbasavaraj", "url": "https://maheshbasavaraj.substack.com/"}
+  ],
+  "stats": [
+    {"n": "16+", "l": "years across industry & academia"},
+    {"n": "3", "l": "utility patents (2026)"},
+    {"n": "10+", "l": "publications & conference papers"},
+    {"n": "Ph.D.", "l": "in progress · VTU"}
+  ],
+  "summary": "Computer Science educator, AI researcher and former enterprise systems engineer with 8 years building banking and capital-markets software at Infosys and Accenture, and 8 years teaching and researching in engineering academia. Assistant Professor in CSE (Data Science) at DSATM and doctoral researcher under VTU. Holder of 3 utility patents and author of 10+ publications spanning Agentic AI, Large Language Models, spatio-temporal deep learning and cognitive IoT networks. Known for turning research into working systems and for building industry-partnered AI programmes for students and faculty.",
+  "skills": [
+    {"group": "AI & Machine Learning", "items": ["Agentic AI", "LLMs", "Deep Learning", "Spatio-Temporal Networks", "Reinforcement Learning", "NLP", "Anomaly Detection", "Responsible AI"]},
+    {"group": "Software Engineering", "items": ["Java / J2EE", "Python", "C++", "Spring Boot", "Hibernate", "Microservices", "SDLC"]},
+    {"group": "Data", "items": ["Python Analytics", "MySQL", "Oracle", "MS SQL Server"]},
+    {"group": "Networks & Emerging Tech", "items": ["IoT QoS Optimisation", "Underwater MAC Protocols", "Blockchain"]},
+    {"group": "DevOps & Tools", "items": ["Git / GitHub", "Jenkins CI/CD", "Docker", "JIRA"]},
+    {"group": "Academic Leadership", "items": ["Curriculum Design", "Outcome-Based Education", "FDP Coordination", "Industry–Academia Programmes"]}
+  ],
+  "academic": [
+    {"org": "Dayananda Sagar Academy of Technology & Management (DSATM)", "role": "Assistant Professor — CSE (Data Science)", "dates": "Aug 2024 – Present", "current": true,
+     "points": [
+       "Teach and run labs in Data Science, Deep Learning and Agentic AI within an autonomous, VTU-affiliated framework.",
+       "Built and led a flagship 6-month Agentic AI immersion programme for students in partnership with Capabl, alongside institutional Faculty Development Programmes.",
+       "Supervise final-year capstone projects and drive departmental research, including utility patents in machine-assisted automation and IoT systems."
+     ]},
+    {"org": "City Engineering College", "role": "Assistant Professor — CSE", "dates": "Oct 2023 – Jul 2024",
+     "points": [
+       "Taught core computing courses and supervised applied machine-learning student projects.",
+       "Coordinated departmental technical workshops and student mentoring."
+     ]},
+    {"org": "T. John Institute of Technology", "role": "Assistant Professor — CSE", "dates": "Oct 2021 – Oct 2023",
+     "points": [
+       "Taught object-oriented programming, data structures and web/cloud architectures.",
+       "Published research evaluating OpenAI Codex on real-world coding and deep-learning credit-card fraud detection."
+     ]},
+    {"org": "Navya PU College & Janaseva PU College", "role": "Lecturer — Computer Science", "dates": "2018 – 2021",
+     "points": ["Taught pre-university programming, algorithms and computational logic."]}
+  ],
+  "industry": [
+    {"org": "Accenture", "role": "Senior Analyst — Murex Solutions Factory", "dates": "Feb 2014 – Aug 2017",
+     "points": [
+       "Developed scalable enterprise modules in Java/J2EE and Spring with relational databases for international capital-markets clients.",
+       "Worked across global agile teams through the full SDLC — JIRA-driven triage, automated builds and release integration."
+     ]},
+    {"org": "Infosys", "role": "Senior Systems Engineer · Systems Engineer — Finacle", "dates": "Jul 2009 – Jan 2014",
+     "points": [
+       "Built and enhanced Finacle CRM and the Finacle universal banking platform used by banks worldwide.",
+       "Refactored backend services, tuned SQL and transaction-processing paths, and owned system-integration testing and deployments."
+     ]}
+  ],
+  "patents": [
+    "A Bulk Silkworm Cocoon Inspection and Assisted Sorting Machine Using Shallow-Layer Conveyor Spreading",
+    "Adaptive Quality of Service Management System for Heterogeneous Internet of Things Networks",
+    "Ethical and Responsible AI: Bias Mitigation and Fairness in Machine Learning Models"
+  ],
+  "publications": [
+    {"venue": "ICIICS 2026", "year": "2026", "title": "Multi-Scale Spatio-Temporal Network with Frequency-Spatial Parallel Attention for Motor Imagery Classification", "where": "3rd Intl. Conf. on Integrated Intelligence and Communication Systems, May 2026"},
+    {"venue": "ICIICS 2026", "year": "2026", "title": "Predictive Mobility-Aware Cognitive Medium Access Control for Underwater Vehicle Communication", "where": "ICIICS 2026"},
+    {"venue": "ICBDML 2026", "year": "2026", "title": "Harnessing Large Language Models for Next-Generation Artificial Intelligence Applications", "where": "2nd Intl. Conf. on Big Data and Machine Learning, Feb 2026"},
+    {"venue": "J. Neurological Sciences", "year": "2026", "title": "Comment on “Improving care for amyotrophic lateral sclerosis with artificial intelligence and affective computing”", "where": "Journal of the Neurological Sciences, Mar 2026"},
+    {"venue": "Medical Science Educator", "year": "2026", "title": "Comment on “Incorporating Artificial Intelligence in Qualitative Research: Exploring the Role of ChatGPT in Thematic Analysis”", "where": "Medical Science Educator, 2026"},
+    {"venue": "IEEE ICMNWC 2025", "year": "2025", "title": "Lightweight Multi-Agent Q-learning Cross-Layer Optimization in Wireless IoT Networks for Balanced Energy Utilization", "where": "IEEE ICMNWC, Dec 2025"},
+    {"venue": "JETIR / ICEASD 2024", "year": "2024", "title": "Using AI Agents Built on LLMs for Building AGI", "where": "Intl. Conf. on Engineering Advancements and Sustainable Development, Vol. 11 Issue 5, May 2024"},
+    {"venue": "ICAMSnT 2023", "year": "2023", "title": "The Alignment Problem in AI", "where": "Intl. Conf. on Advances in Modern Science and Technology, Apr 2023"},
+    {"venue": "ICAPCTA 2022", "year": "2022", "title": "Evaluating OpenAI Codex for Real-World Coding", "where": "Intl. Conf. on Advances in Parallel Computing Technologies & Applications, Jan 2022"},
+    {"venue": "IRJET 2022", "year": "2022", "title": "A Review of Deep Learning Techniques in Detection of Anomaly in Credit Card Transactions", "where": "IRJET, Vol. 9 Issue 9"}
+  ],
+  "education": [
+    {"degree": "Ph.D., Computer Science & Engineering", "school": "DSATM — Visvesvaraya Technological University", "when": "Pursuing · enrolled 2023"},
+    {"degree": "M.Tech, Computer Science & Engineering", "school": "K.S. Institute of Technology — VTU", "when": "2021 · CGPA 8.5"},
+    {"degree": "B.E., Computer Science & Engineering", "school": "UVCE — Bangalore University", "when": "2009"}
+  ],
+  "certifications": [
+    {"name": "Deep Learning — Elite", "by": "NPTEL", "when": "2025"},
+    {"name": "Blockchain Technology", "by": "NPTEL", "when": "2025"},
+    {"name": "Data Analytics with Python", "by": "NPTEL", "when": "2024"},
+    {"name": "The Science Behind Branding", "by": "IISc Bangalore", "when": "2025"},
+    {"name": "FDP: Machine Learning & NLP", "by": "Infosys Springboard", "when": "2025"},
+    {"name": "FDP: Cyber Security", "by": "AICTE · VTU", "when": "2023"},
+    {"name": "FDP: Amazon Web Services", "by": "AICTE", "when": "2022"}
+  ],
+  "writing": [
+    {"title": "The Ghost in the Feed: Inside the First AI Civilization", "url": "https://maheshbasavaraj.substack.com/p/the-ghost-in-the-feed-inside-the"},
+    {"title": "Thermodynamic Computing: Extropic’s Chip and the Path to Efficient AI", "url": "https://maheshbasavaraj.substack.com/p/thermodynamic-computing-extropics"},
+    {"title": "The Patent Paradox: AI and the Future of Intellectual Property", "url": "https://maheshbasavaraj.substack.com/p/the-patent-paradox-ai-and-the-future"},
+    {"title": "Indian Academia’s Obsolete Secret", "url": "https://maheshbasavaraj.substack.com/p/indian-academias-obsolete-secret"},
+    {"title": "Scientific Papers are DOA", "url": "https://maheshbasavaraj.substack.com/p/scientific-papers-are-doa"}
+  ]
+}

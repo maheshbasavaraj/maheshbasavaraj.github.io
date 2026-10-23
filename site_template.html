@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Mahesh Basavaraj — AI Researcher & Educator</title>
+<meta name="description" content="Mahesh Basavaraj — Assistant Professor (CSE, Data Science) at DSATM, AI researcher, 3 patents, 10+ publications, former Infosys & Accenture engineer.">
+<meta property="og:title" content="Mahesh Basavaraj — AI Researcher & Educator">
+<meta property="og:description" content="Agentic AI, LLMs, deep learning and IoT research. 16+ years across industry and academia.">
+{{FONTS}}
+<style>
+:root{--bg:#f6f4ef;--paper:#fffdf9;--ink:#16202a;--mut:#5b6670;--line:#dfdcd4;--acc:#0e5a5c;--acc2:#b8742a}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font:16px/1.6 Manrope,sans-serif;text-wrap:pretty}
+a{color:var(--acc)}
+.wrap{max-width:1120px;margin:0 auto;padding:0 28px}
+nav{position:sticky;top:0;z-index:5;background:rgba(246,244,239,.94);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;height:60px}
+nav .mk{font-family:Fraunces,serif;font-weight:700;font-size:20px;color:var(--ink);text-decoration:none}
+nav .mk span{color:var(--acc)}
+nav ul{display:flex;gap:24px;list-style:none}
+nav ul a{color:var(--mut);text-decoration:none;font-size:14px;font-weight:600}
+nav ul a:hover{color:var(--ink)}
+.cv{background:var(--ink);color:#fff!important;padding:9px 16px;border-radius:6px;font-size:14px;font-weight:700;text-decoration:none}
+header{padding:88px 0 64px;display:grid;grid-template-columns:1.55fr 1fr;gap:56px;align-items:end}
+.eyebrow{font-size:13px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--acc2)}
+h1{font-family:Fraunces,serif;font-size:clamp(46px,7vw,88px);line-height:.95;letter-spacing:-2px;margin:14px 0 22px}
+h1 span{color:var(--acc)}
+.lede{font-family:Fraunces,serif;font-size:22px;line-height:1.45;color:#33404b;max-width:620px}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.btn{display:inline-flex;align-items:center;min-height:44px;padding:0 18px;border-radius:6px;border:1px solid var(--ink);color:var(--ink);text-decoration:none;font-weight:700;font-size:14px}
+.btn.p{background:var(--acc);border-color:var(--acc);color:#fff}
+.btn:hover{transform:translateY(-1px)}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:26px}
+.facts dt{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--mut)}
+.facts dd{margin:2px 0 14px;font-weight:600}
+.facts dd:last-child{margin-bottom:0}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.stats div{padding:28px 20px;border-left:1px solid var(--line)}
+.stats div:first-child{border-left:0;padding-left:0}
+.stats b{display:block;font-family:Fraunces,serif;font-size:44px;line-height:1;color:var(--acc)}
+.stats span{color:var(--mut);font-size:14px}
+section{padding:80px 0 0}
+.sh{display:grid;grid-template-columns:260px 1fr;gap:40px}
+.sh h2{font-family:Fraunces,serif;font-size:32px;line-height:1.1;position:sticky;top:84px;align-self:start}
+.sh h2 small{display:block;font-family:Manrope;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--acc2);margin-bottom:8px}
+.about{font-size:19px;color:#2a3540}
+.tl{border-left:2px solid var(--line);padding-left:28px}
+.job{position:relative;padding-bottom:34px}
+.job::before{content:"";position:absolute;left:-35px;top:7px;width:12px;height:12px;border-radius:50%;background:var(--bg);border:2px solid var(--acc)}
+.job.now::before{background:var(--acc)}
+.job .dt{font-size:13px;font-weight:700;color:var(--acc2);letter-spacing:.04em}
+.job h3{font-size:20px;margin:2px 0 0}
+.job .org{color:var(--acc);font-weight:600}
+.job ul{margin:10px 0 0 18px;color:#36424c}
+.job li{margin-bottom:5px}
+.tabs{display:flex;gap:8px;margin-bottom:24px}
+.tabs button{font:inherit;font-weight:700;font-size:14px;min-height:40px;padding:0 16px;border-radius:6px;border:1px solid var(--line);background:var(--paper);color:var(--mut);cursor:pointer}
+.tabs button[aria-selected=true]{background:var(--ink);color:#fff;border-color:var(--ink)}
+.pat{counter-reset:p;display:grid;gap:14px}
+.pat div{display:grid;grid-template-columns:60px 1fr;align-items:baseline;padding:20px 0;border-bottom:1px solid var(--line);font-size:18px;font-weight:600}
+.pat div::before{counter-increment:p;content:"0" counter(p);font-family:Fraunces,serif;font-size:30px;color:var(--acc2)}
+.pat em{grid-column:2;font-style:normal;font-size:13px;color:var(--mut);font-weight:600}
+.pubf{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px}
+.pubf button{font:inherit;font-size:13px;font-weight:700;min-height:36px;padding:0 14px;border-radius:99px;border:1px solid var(--line);background:transparent;color:var(--mut);cursor:pointer}
+.pubf button.on{border-color:var(--acc);color:var(--acc);background:#e6efee}
+.pub{display:grid;grid-template-columns:70px 1fr;gap:16px;padding:16px 0;border-bottom:1px solid var(--line)}
+.pub .y{font-family:Fraunces,serif;font-size:22px;color:var(--acc)}
+.pub b{display:block;font-size:16.5px;line-height:1.4}
+.pub span{font-size:14px;color:var(--mut)}
+.pub i{font-style:normal;font-size:12px;font-weight:700;color:var(--acc2);letter-spacing:.06em;text-transform:uppercase}
+.skills{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.skills h4{font-size:15px;margin-bottom:10px}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chips span{font-size:13px;font-weight:600;background:var(--bg);border:1px solid var(--line);border-radius:5px;padding:4px 9px}
+.edu{display:grid;gap:0}
+.edu div{display:grid;grid-template-columns:1fr auto;gap:4px 24px;padding:18px 0;border-bottom:1px solid var(--line)}
+.edu b{font-size:18px}.edu span{color:var(--mut)}.edu em{font-style:normal;color:var(--acc2);font-weight:700;font-size:14px;grid-row:1/3;grid-column:2;align-self:center}
+.certs{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:12px;margin-top:28px}
+.certs .card{padding:16px}.certs b{display:block;font-size:15px}.certs span{font-size:13px;color:var(--mut)}
+.media{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.media .card h4{font-family:Fraunces,serif;font-size:24px}
+.media .card p{color:var(--mut);margin:6px 0 16px}
+.media ol{list-style:none}
+.media li{padding:10px 0;border-top:1px solid var(--line)}
+.media li a{text-decoration:none;font-weight:600;color:var(--ink)}
+.media li a:hover{color:var(--acc)}
+footer{margin-top:96px;background:var(--ink);color:#d9dee2;padding:64px 0 40px}
+footer h2{font-family:Fraunces,serif;font-size:clamp(34px,5vw,56px);color:#fff;line-height:1.05}
+footer .row{display:flex;flex-wrap:wrap;gap:12px;margin:28px 0 40px}
+footer .btn{border-color:#5d6a75;color:#fff}
+footer .btn.p{background:var(--acc2);border-color:var(--acc2)}
+footer small{color:#8b96a0}
+:focus-visible{outline:3px solid var(--acc2);outline-offset:2px}
+@media (max-width:860px){
+ nav ul{display:none} header{grid-template-columns:1fr;padding-top:48px;gap:32px}
+ .stats{grid-template-columns:1fr 1fr}.stats div:nth-child(3){border-left:0;padding-left:0}
+ .stats div{border-top:1px solid var(--line)}
+ .sh{grid-template-columns:1fr;gap:20px}.sh h2{position:static}
+ .skills,.media{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn:hover{transform:none}}
+@media print{nav,.tabs,.pubf,.cta{display:none}}
+</style>
+</head>
+<body>
+<nav><div class="wrap"><a class="mk" href="#top">Mahesh <span>Basavaraj</span></a>
+<ul><li><a href="#about">About</a></li><li><a href="#experience">Experience</a></li><li><a href="#research">Research</a></li><li><a href="#skills">Skills</a></li><li><a href="#writing">Writing</a></li><li><a href="#contact">Contact</a></li></ul>
+<a class="cv" href="Mahesh_Basavaraj_Resume.pdf" download>Résumé PDF</a></div></nav>
+
+<div class="wrap" id="top">
+<header>
+ <div>
+  <div class="eyebrow">AI Researcher · Educator · Engineer</div>
+  <h1>Mahesh<br><span>Basavaraj</span></h1>
+  <p class="lede" id="tagline"></p>
+  <div class="cta" id="cta"></div>
+ </div>
+ <dl class="card facts" id="facts"></dl>
+</header>
+<div class="stats" id="stats"></div>
+
+<section id="about"><div class="sh"><h2><small>01</small>About</h2><p class="about" id="summary"></p></div></section>
+
+<section id="experience"><div class="sh"><h2><small>02</small>Experience</h2>
+ <div><div class="tabs" role="tablist"><button role="tab" aria-selected="true" data-t="academic">Academia</button><button role="tab" aria-selected="false" data-t="industry">Industry</button><button role="tab" aria-selected="false" data-t="all">Full timeline</button></div>
+ <div class="tl" id="tl"></div></div></div></section>
+
+<section id="research"><div class="sh"><h2><small>03</small>Patents &amp; Research</h2>
+ <div><div class="pat" id="pat"></div>
+ <h3 style="font-size:14px;letter-spacing:.14em;text-transform:uppercase;color:var(--mut);margin:44px 0 14px">Publications</h3>
+ <div class="pubf" id="pubf"></div><div id="pubs"></div></div></div></section>
+
+<section id="skills"><div class="sh"><h2><small>04</small>Skills &amp; Education</h2>
+ <div><div class="skills" id="sk"></div>
+ <div class="edu" id="edu" style="margin-top:40px"></div><div class="certs" id="certs"></div></div></div></section>
+
+<section id="writing"><div class="sh"><h2><small>05</small>Writing &amp; Media</h2>
+ <div class="media">
+  <div class="card"><h4>Substack</h4><p>Essays on AI, academia and the future of research.</p><ol id="wr"></ol>
+   <a class="btn" style="margin-top:16px" href="https://maheshbasavaraj.substack.com/">Read on Substack</a></div>
+  <div class="card"><h4>Echoes of AI</h4><p>A YouTube channel explaining AI ideas and what they mean for students, teachers and engineers.</p>
+   <a class="btn p" href="https://www.youtube.com/@MaheshBasavaraj-q4g">Watch on YouTube</a></div>
+ </div></div></section>
+</div>
+
+<footer id="contact"><div class="wrap">
+ <h2>Hiring for AI research,<br>teaching or engineering?</h2>
+ <div class="row" id="contactrow"></div>
+ <small>© <span id="yr"></span> Mahesh Basavaraj · Bengaluru, India</small>
+</div></footer>
+
+<script>
+const D=/*DATA*/null;
+const $=id=>document.getElementById(id), esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+$('tagline').textContent=D.tagline; $('summary').textContent=D.summary; $('yr').textContent=new Date().getFullYear();
+$('cta').innerHTML=`<a class="btn p" href="mailto:${D.emails[1]}">Get in touch</a><a class="btn" href="Mahesh_Basavaraj_Resume.pdf" download>Download résumé</a>`+D.links.map(l=>`<a class="btn" href="${l.url}" target="_blank" rel="noopener">${l.label}</a>`).join('');
+$('facts').innerHTML=`<dt>Currently</dt><dd>${esc(D.academic[0].role)}<br><span style="color:var(--acc)">${esc(D.academic[0].org)}</span></dd><dt>Research</dt><dd>Agentic AI · LLMs · Deep Learning · IoT</dd><dt>Based in</dt><dd>${esc(D.location)}</dd><dt>Email</dt><dd><a href="mailto:${D.emails[1]}">${esc(D.emails[1])}</a></dd>`;
+$('stats').innerHTML=D.stats.map(s=>`<div><b>${esc(s.n)}</b><span>${esc(s.l)}</span></div>`).join('');
+const job=(j,k)=>`<div class="job ${j.current?'now':''}"><div class="dt">${esc(j.dates)} · ${k}</div><h3>${esc(j.role)}</h3><div class="org">${esc(j.org)}</div><ul>${j.points.map(p=>`<li>${esc(p)}</li>`).join('')}</ul></div>`;
+function tl(t){const a=D.academic.map(j=>job(j,'Academia')),i=D.industry.map(j=>job(j,'Industry'));$('tl').innerHTML=(t==='academic'?a:t==='industry'?i:[...a,...i]).join('');
+ document.querySelectorAll('.tabs button').forEach(b=>b.setAttribute('aria-selected',b.dataset.t===t));}
+document.querySelectorAll('.tabs button').forEach(b=>b.onclick=()=>tl(b.dataset.t)); tl('academic');
+$('pat').innerHTML=D.patents.map(p=>`<div>${esc(p)}<em>Utility patent · 2026</em></div>`).join('');
+const yrs=['All',...new Set(D.publications.map(p=>p.year))];
+function pubs(y){$('pubs').innerHTML=D.publications.filter(p=>y==='All'||p.year===y).map(p=>`<div class="pub"><div class="y">${p.year}</div><div><i>${esc(p.venue)}</i><b>${esc(p.title)}</b><span>${esc(p.where)}</span></div></div>`).join('');
+ $('pubf').querySelectorAll('button').forEach(b=>b.classList.toggle('on',b.dataset.y===y));}
+$('pubf').innerHTML=yrs.map(y=>`<button data-y="${y}">${y}</button>`).join(''); $('pubf').querySelectorAll('button').forEach(b=>b.onclick=()=>pubs(b.dataset.y)); pubs('All');
+$('sk').innerHTML=D.skills.map(g=>`<div class="card"><h4>${esc(g.group)}</h4><div class="chips">${g.items.map(i=>`<span>${esc(i)}</span>`).join('')}</div></div>`).join('');
+$('edu').innerHTML=D.education.map(x=>`<div><b>${esc(x.degree)}</b><em>${esc(x.when)}</em><span>${esc(x.school)}</span></div>`).join('');
+$('certs').innerHTML=D.certifications.map(c=>`<div class="card"><b>${esc(c.name)}</b><span>${esc(c.by)} · ${esc(c.when)}</span></div>`).join('');
+$('wr').innerHTML=D.writing.map(w=>`<li><a href="${w.url}" target="_blank" rel="noopener">${esc(w.title)}</a></li>`).join('');
+$('contactrow').innerHTML=D.emails.map((m,i)=>`<a class="btn ${i?'':'p'}" href="mailto:${m}">${esc(m)}</a>`).join('')+`<a class="btn" href="tel:${D.phone.replace(/\s/g,'')}">${esc(D.phone)}</a>`+D.links.map(l=>`<a class="btn" href="${l.url}" target="_blank" rel="noopener">${l.label}</a>`).join('');
+</script>
+</body>
+</html>
