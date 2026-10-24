@@ -29,6 +29,7 @@ def resume():
     certs = "".join(f'<div class="ce"><b>{e(c["name"])}</b><span>{e(c["by"])} · {e(c["when"])}</span></div>' for c in D["certifications"])
     pats = "".join(f'<li><span class="pn">0{i+1}</span>{e(p)}</li>' for i, p in enumerate(D["patents"]))
     pubs = "".join(f'<li><span class="pv">{e(p["venue"])}</span><b>{e(p["title"])}</b> <em>{e(p["where"])}</em></li>' for p in D["publications"])
+    projs = "".join(f'<div class="pj"><a href="{x["url"]}"><b>{e(x["name"])}</b></a> <span class="pt">{e(x["tech"])}</span><p>{e(x["desc"])}</p></div>' for x in D["projects"][:5])
     write = "".join(f'<li><a href="{w["url"]}">{e(w["title"])}</a></li>' for w in D["writing"][:3])
     return f'''<!doctype html><html><head><meta charset="utf-8"><title>{e(D["name"])} — Resume</title>{FONTS}
 <style>
@@ -51,11 +52,11 @@ h3::after {{ content:""; flex:1; height:1px; background:var(--line); }}
 aside h3 {{ margin-top:6mm; }}
 .contact div, .contact a {{ display:block; margin-bottom:1.3mm; word-break:break-all; }}
 .contact i, .links i {{ display:block; font-style:normal; font-size:6.6pt; letter-spacing:.12em; text-transform:uppercase; color:var(--mut); }}
-.links a {{ display:block; margin-bottom:1.8mm; font-weight:600; color:var(--acc); }}
-.stats {{ display:grid; grid-template-columns:1fr 1fr; gap:3mm 2mm; }}
+.links {{ display:grid; grid-template-columns:auto 1fr; gap:1.2mm 2.5mm; align-items:baseline; }} .links a {{ display:contents; font-weight:600; color:var(--acc); }} .links a i {{ display:inline; }}
+.stats {{ display:grid; grid-template-columns:1fr 1fr; gap:2.4mm 2mm; }}
 .st b {{ display:block; font-family:Fraunces,serif; font-size:17pt; color:var(--acc); line-height:1; }}
 .st span {{ font-size:7pt; color:var(--mut); line-height:1.25; display:block; margin-top:.8mm; }}
-.sk {{ margin-bottom:2.6mm; }} .sk h4 {{ font-size:7.8pt; font-weight:700; }} .sk p {{ color:#3c4852; font-size:7.9pt; }}
+.sk {{ margin-bottom:2.2mm; }} .sk h4 {{ font-size:7.8pt; font-weight:700; }} .sk p {{ color:#3c4852; font-size:7.9pt; }}
 .ed, .ce {{ margin-bottom:2.4mm; }} .ed b, .ce b {{ display:block; font-size:8.1pt; }}
 .ed span, .ce span {{ display:block; color:#3c4852; font-size:7.7pt; }} .ed em {{ font-style:normal; color:var(--acc2); font-size:7.5pt; font-weight:600; }}
 .ce span {{ color:var(--mut); }}
@@ -65,12 +66,15 @@ aside h3 {{ margin-top:6mm; }}
 .jh b {{ font-size:9.4pt; }} .org {{ display:block; color:var(--acc); font-weight:600; font-size:8.3pt; }}
 .dt {{ white-space:nowrap; font-size:7.6pt; font-weight:600; color:var(--mut); }}
 ul {{ margin-top:1.2mm; padding-left:3.6mm; }} li {{ margin-bottom:.7mm; }} li::marker {{ color:var(--acc2); }}
-.pat {{ list-style:none; padding:0; }} .pat li {{ display:flex; gap:3mm; margin-bottom:2.6mm; font-weight:500; font-size:9.4pt; }}
+.pat {{ list-style:none; padding:0; }} .pat li {{ display:flex; gap:3mm; margin-bottom:1.8mm; font-weight:500; font-size:9.4pt; }}
 .pn {{ font-family:Fraunces,serif; font-weight:700; color:var(--acc2); font-size:10pt; line-height:1.1; }}
-.pubs {{ list-style:none; padding:0; }} .pubs li {{ margin-bottom:3.2mm; padding-left:0; font-size:9pt; }}
+.pubs {{ list-style:none; padding:0; }} .pubs li {{ margin-bottom:2.3mm; padding-left:0; font-size:9pt; }}
 .pubs b {{ font-weight:600; }} .pubs em {{ color:var(--mut); font-style:normal; font-size:7.8pt; }}
 .pv {{ display:inline-block; font-size:6.8pt; font-weight:700; letter-spacing:.05em; color:#fff; background:var(--acc); padding:.25mm 1.6mm; border-radius:1mm; margin-right:1.5mm; }}
 .wr {{ padding-left:3.6mm; }} .wr a {{ color:var(--acc); font-weight:600; }}
+.pj {{ margin-bottom:2mm; }} .pj b {{ color:var(--acc); font-size:9pt; }} .pj p {{ color:#36424c; font-size:8.3pt; }}
+.pt {{ font-size:7pt; font-weight:700; color:var(--acc2); letter-spacing:.04em; margin-left:1mm; }}
+.gh {{ font-size:7.8pt; color:var(--mut); margin:-1mm 0 2.4mm; }}
 .foot {{ margin-top:4mm; font-size:7.3pt; color:var(--mut); }}
 </style></head><body>
 <section class="page">
@@ -102,6 +106,8 @@ ul {{ margin-top:1.2mm; padding-left:3.6mm; }} li {{ margin-bottom:.7mm; }} li::
 <main>
   <h3 style="margin-top:0">Patents</h3><ul class="pat">{pats}</ul>
   <h3>Research Publications</h3><ul class="pubs">{pubs}</ul>
+  <h3>Open-Source &amp; Teaching Projects</h3>
+  <p class="gh">github.com/{e(D["github_user"])} · selected repositories</p>{projs}
 </main>
 </section>
 </body></html>'''

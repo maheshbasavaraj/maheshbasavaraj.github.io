@@ -19,11 +19,11 @@ h3::after { content:""; flex:1; height:1px; background:var(--line); }
 aside h3 { margin-top:6mm; }
 .contact div, .contact a { display:block; margin-bottom:1.3mm; word-break:break-all; }
 .contact i, .links i { display:block; font-style:normal; font-size:6.6pt; letter-spacing:.12em; text-transform:uppercase; color:var(--mut); }
-.links a { display:block; margin-bottom:1.8mm; font-weight:600; color:var(--acc); }
-.stats { display:grid; grid-template-columns:1fr 1fr; gap:3mm 2mm; }
+.links { display:grid; grid-template-columns:auto 1fr; gap:1.2mm 2.5mm; align-items:baseline; } .links a { display:contents; font-weight:600; color:var(--acc); } .links a i { display:inline; }
+.stats { display:grid; grid-template-columns:1fr 1fr; gap:2.4mm 2mm; }
 .st b { display:block; font-family:Fraunces,serif; font-size:17pt; color:var(--acc); line-height:1; }
 .st span { font-size:7pt; color:var(--mut); line-height:1.25; display:block; margin-top:.8mm; }
-.sk { margin-bottom:2.6mm; } .sk h4 { font-size:7.8pt; font-weight:700; } .sk p { color:#3c4852; font-size:7.9pt; }
+.sk { margin-bottom:2.2mm; } .sk h4 { font-size:7.8pt; font-weight:700; } .sk p { color:#3c4852; font-size:7.9pt; }
 .ed, .ce { margin-bottom:2.4mm; } .ed b, .ce b { display:block; font-size:8.1pt; }
 .ed span, .ce span { display:block; color:#3c4852; font-size:7.7pt; } .ed em { font-style:normal; color:var(--acc2); font-size:7.5pt; font-weight:600; }
 .ce span { color:var(--mut); }
@@ -33,12 +33,15 @@ aside h3 { margin-top:6mm; }
 .jh b { font-size:9.4pt; } .org { display:block; color:var(--acc); font-weight:600; font-size:8.3pt; }
 .dt { white-space:nowrap; font-size:7.6pt; font-weight:600; color:var(--mut); }
 ul { margin-top:1.2mm; padding-left:3.6mm; } li { margin-bottom:.7mm; } li::marker { color:var(--acc2); }
-.pat { list-style:none; padding:0; } .pat li { display:flex; gap:3mm; margin-bottom:2.6mm; font-weight:500; font-size:9.4pt; }
+.pat { list-style:none; padding:0; } .pat li { display:flex; gap:3mm; margin-bottom:1.8mm; font-weight:500; font-size:9.4pt; }
 .pn { font-family:Fraunces,serif; font-weight:700; color:var(--acc2); font-size:10pt; line-height:1.1; }
-.pubs { list-style:none; padding:0; } .pubs li { margin-bottom:3.2mm; padding-left:0; font-size:9pt; }
+.pubs { list-style:none; padding:0; } .pubs li { margin-bottom:2.3mm; padding-left:0; font-size:9pt; }
 .pubs b { font-weight:600; } .pubs em { color:var(--mut); font-style:normal; font-size:7.8pt; }
 .pv { display:inline-block; font-size:6.8pt; font-weight:700; letter-spacing:.05em; color:#fff; background:var(--acc); padding:.25mm 1.6mm; border-radius:1mm; margin-right:1.5mm; }
 .wr { padding-left:3.6mm; } .wr a { color:var(--acc); font-weight:600; }
+.pj { margin-bottom:2mm; } .pj b { color:var(--acc); font-size:9pt; } .pj p { color:#36424c; font-size:8.3pt; }
+.pt { font-size:7pt; font-weight:700; color:var(--acc2); letter-spacing:.04em; margin-left:1mm; }
+.gh { font-size:7.8pt; color:var(--mut); margin:-1mm 0 2.4mm; }
 .foot { margin-top:4mm; font-size:7.3pt; color:var(--mut); }
 </style></head><body>
 <section class="page">
@@ -48,7 +51,7 @@ ul { margin-top:1.2mm; padding-left:3.6mm; } li { margin-bottom:.7mm; } li::mark
   <h3>Contact</h3>
   <div class="contact"><div><i>Location</i>Bengaluru, Karnataka, India</div><div><i>Phone</i>+91 98866 42542</div>
   <a href="mailto:mahesh-csds@dsatm.edu.in"><i>Email</i>mahesh-csds@dsatm.edu.in</a><a href="mailto:BMaheshbasavaraj@gmail.com"><i>Email</i>BMaheshbasavaraj@gmail.com</a></div>
-  <h3>Online</h3><div class="links"><a href="https://www.linkedin.com/in/mahesh-basavaraj-57189515/"><i>LinkedIn</i>in/mahesh-basavaraj-57189515</a><a href="https://www.youtube.com/@MaheshBasavaraj-q4g"><i>YouTube</i>Echoes of AI</a><a href="https://maheshbasavaraj.substack.com/"><i>Substack</i>@maheshbasavaraj</a></div>
+  <h3>Online</h3><div class="links"><a href="https://www.linkedin.com/in/mahesh-basavaraj-57189515/"><i>LinkedIn</i>in/mahesh-basavaraj-57189515</a><a href="https://github.com/maheshbasavaraj"><i>GitHub</i>maheshbasavaraj</a><a href="https://www.youtube.com/@MaheshBasavaraj-q4g"><i>YouTube</i>Echoes of AI</a><a href="https://maheshbasavaraj.substack.com/"><i>Substack</i>@maheshbasavaraj</a></div>
   <h3>At a glance</h3><div class="stats"><div class="st"><b>16+</b><span>years across industry &amp; academia</span></div><div class="st"><b>3</b><span>utility patents (2026)</span></div><div class="st"><b>10+</b><span>publications &amp; conference papers</span></div><div class="st"><b>Ph.D.</b><span>in progress · VTU</span></div></div>
   <h3>Skills</h3><div class="sk"><h4>AI &amp; Machine Learning</h4><p>Agentic AI · LLMs · Deep Learning · Spatio-Temporal Networks · Reinforcement Learning · NLP · Anomaly Detection · Responsible AI</p></div><div class="sk"><h4>Software Engineering</h4><p>Java / J2EE · Python · C++ · Spring Boot · Hibernate · Microservices · SDLC</p></div><div class="sk"><h4>Data</h4><p>Python Analytics · MySQL · Oracle · MS SQL Server</p></div><div class="sk"><h4>Networks &amp; Emerging Tech</h4><p>IoT QoS Optimisation · Underwater MAC Protocols · Blockchain</p></div><div class="sk"><h4>DevOps &amp; Tools</h4><p>Git / GitHub · Jenkins CI/CD · Docker · JIRA</p></div><div class="sk"><h4>Academic Leadership</h4><p>Curriculum Design · Outcome-Based Education · FDP Coordination · Industry–Academia Programmes</p></div>
 </aside>
@@ -76,6 +79,8 @@ ul { margin-top:1.2mm; padding-left:3.6mm; } li { margin-bottom:.7mm; } li::mark
 <main>
   <h3 style="margin-top:0">Patents</h3><ul class="pat"><li><span class="pn">01</span>A Bulk Silkworm Cocoon Inspection and Assisted Sorting Machine Using Shallow-Layer Conveyor Spreading</li><li><span class="pn">02</span>Adaptive Quality of Service Management System for Heterogeneous Internet of Things Networks</li><li><span class="pn">03</span>Ethical and Responsible AI: Bias Mitigation and Fairness in Machine Learning Models</li></ul>
   <h3>Research Publications</h3><ul class="pubs"><li><span class="pv">ICIICS 2026</span><b>Multi-Scale Spatio-Temporal Network with Frequency-Spatial Parallel Attention for Motor Imagery Classification</b> <em>3rd Intl. Conf. on Integrated Intelligence and Communication Systems, May 2026</em></li><li><span class="pv">ICIICS 2026</span><b>Predictive Mobility-Aware Cognitive Medium Access Control for Underwater Vehicle Communication</b> <em>ICIICS 2026</em></li><li><span class="pv">ICBDML 2026</span><b>Harnessing Large Language Models for Next-Generation Artificial Intelligence Applications</b> <em>2nd Intl. Conf. on Big Data and Machine Learning, Feb 2026</em></li><li><span class="pv">J. Neurological Sciences</span><b>Comment on “Improving care for amyotrophic lateral sclerosis with artificial intelligence and affective computing”</b> <em>Journal of the Neurological Sciences, Mar 2026</em></li><li><span class="pv">Medical Science Educator</span><b>Comment on “Incorporating Artificial Intelligence in Qualitative Research: Exploring the Role of ChatGPT in Thematic Analysis”</b> <em>Medical Science Educator, 2026</em></li><li><span class="pv">IEEE ICMNWC 2025</span><b>Lightweight Multi-Agent Q-learning Cross-Layer Optimization in Wireless IoT Networks for Balanced Energy Utilization</b> <em>IEEE ICMNWC, Dec 2025</em></li><li><span class="pv">JETIR / ICEASD 2024</span><b>Using AI Agents Built on LLMs for Building AGI</b> <em>Intl. Conf. on Engineering Advancements and Sustainable Development, Vol. 11 Issue 5, May 2024</em></li><li><span class="pv">ICAMSnT 2023</span><b>The Alignment Problem in AI</b> <em>Intl. Conf. on Advances in Modern Science and Technology, Apr 2023</em></li><li><span class="pv">ICAPCTA 2022</span><b>Evaluating OpenAI Codex for Real-World Coding</b> <em>Intl. Conf. on Advances in Parallel Computing Technologies &amp; Applications, Jan 2022</em></li><li><span class="pv">IRJET 2022</span><b>A Review of Deep Learning Techniques in Detection of Anomaly in Credit Card Transactions</b> <em>IRJET, Vol. 9 Issue 9</em></li></ul>
+  <h3>Open-Source &amp; Teaching Projects</h3>
+  <p class="gh">github.com/maheshbasavaraj · selected repositories</p><div class="pj"><a href="https://github.com/maheshbasavaraj/cpu-rush"><b>CPU Rush</b></a> <span class="pt">Node.js · Vanilla JS</span><p>Interactive Socratic teaching game for Operating Systems — students predict scheduling, paging, deadlock and file-system behaviour, and a server grades every move.</p></div><div class="pj"><a href="https://github.com/maheshbasavaraj/dsds"><b>Data Structure Design Studio</b></a> <span class="pt">Python</span><p>Learn data structures by choosing under changing constraints — a progressive, scored decision track from arrays to hash maps.</p></div><div class="pj"><a href="https://github.com/maheshbasavaraj/game_MCP"><b>Game Forge — Educational Game MCP</b></a> <span class="pt">Python · MCP</span><p>MCP server that generates single-file browser games, each teaching one concept through play, driven by an editable design doctrine.</p></div><div class="pj"><a href="https://github.com/maheshbasavaraj/SWE_QUIZ"><b>ButterCloud Quiz</b></a> <span class="pt">Next.js · Express · Prisma</span><p>Scenario-based platform where users pick the best tech stack and architecture for realistic project requirements.</p></div><div class="pj"><a href="https://github.com/maheshbasavaraj/mlops-cicd"><b>MLOps CI/CD Class Project</b></a> <span class="pt">Python · GitHub Actions</span><p>Classroom project: a small production-style ML API with automated tests and model-quality gates on every push.</p></div>
 </main>
 </section>
 </body></html>

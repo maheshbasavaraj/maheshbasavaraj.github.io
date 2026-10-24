@@ -86,6 +86,16 @@ section{padding:80px 0 0}
 .media li{padding:10px 0;border-top:1px solid var(--line)}
 .media li a{text-decoration:none;font-weight:600;color:var(--ink)}
 .media li a:hover{color:var(--acc)}
+.proj{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.proj a.card{text-decoration:none;color:var(--ink);display:flex;flex-direction:column;gap:6px;transition:border-color .15s}
+.proj a.card:hover{border-color:var(--acc)}
+.proj h4{font-size:17px}.proj p{color:#4a5560;font-size:14.5px;flex:1}
+.proj .tech{font-size:12px;font-weight:700;color:var(--acc2);letter-spacing:.04em}
+.proj .go{font-size:13px;font-weight:700;color:var(--acc)}
+.gha{margin-top:36px}.ghh{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:8px}
+.ghh h3{font-size:14px;letter-spacing:.14em;text-transform:uppercase;color:var(--mut)}.ghh a{font-weight:700;font-size:14px}
+.lr{display:grid;grid-template-columns:1fr auto auto;gap:16px;padding:12px 0;border-bottom:1px solid var(--line);font-size:14.5px}
+.lr a{font-weight:700;text-decoration:none}.lr span{color:var(--mut)}.lm{color:var(--mut);font-size:14px}
 footer{margin-top:96px;background:var(--ink);color:#d9dee2;padding:64px 0 40px}
 footer h2{font-family:Fraunces,serif;font-size:clamp(34px,5vw,56px);color:#fff;line-height:1.05}
 footer .row{display:flex;flex-wrap:wrap;gap:12px;margin:28px 0 40px}
@@ -98,7 +108,7 @@ footer small{color:#8b96a0}
  .stats{grid-template-columns:1fr 1fr}.stats div:nth-child(3){border-left:0;padding-left:0}
  .stats div{border-top:1px solid var(--line)}
  .sh{grid-template-columns:1fr;gap:20px}.sh h2{position:static}
- .skills,.media{grid-template-columns:1fr}
+ .skills,.media,.proj{grid-template-columns:1fr}.lr{grid-template-columns:1fr auto}.lr .lg{display:none}
 }
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn:hover{transform:none}}
 @media print{nav,.tabs,.pubf,.cta{display:none}}
@@ -106,7 +116,7 @@ footer small{color:#8b96a0}
 </head>
 <body>
 <nav><div class="wrap"><a class="mk" href="#top">Mahesh <span>Basavaraj</span></a>
-<ul><li><a href="#about">About</a></li><li><a href="#experience">Experience</a></li><li><a href="#research">Research</a></li><li><a href="#skills">Skills</a></li><li><a href="#writing">Writing</a></li><li><a href="#contact">Contact</a></li></ul>
+<ul><li><a href="#about">About</a></li><li><a href="#experience">Experience</a></li><li><a href="#research">Research</a></li><li><a href="#projects">Projects</a></li><li><a href="#skills">Skills</a></li><li><a href="#writing">Writing</a></li><li><a href="#contact">Contact</a></li></ul>
 <a class="cv" href="Mahesh_Basavaraj_Resume.pdf" download>Résumé PDF</a></div></nav>
 
 <div class="wrap" id="top">
@@ -132,11 +142,15 @@ footer small{color:#8b96a0}
  <h3 style="font-size:14px;letter-spacing:.14em;text-transform:uppercase;color:var(--mut);margin:44px 0 14px">Publications</h3>
  <div class="pubf" id="pubf"></div><div id="pubs"></div></div></div></section>
 
-<section id="skills"><div class="sh"><h2><small>04</small>Skills &amp; Education</h2>
+<section id="projects"><div class="sh"><h2><small>04</small>Projects &amp; Code</h2>
+ <div><div class="proj" id="proj"></div>
+ <div class="gha"><div class="ghh"><h3>Latest on GitHub</h3><a href="https://github.com/maheshbasavaraj" target="_blank" rel="noopener">View all repositories →</a></div><div id="live"><span class="lm">Loading recent activity…</span></div></div></div></div></section>
+
+<section id="skills"><div class="sh"><h2><small>05</small>Skills &amp; Education</h2>
  <div><div class="skills" id="sk"></div>
  <div class="edu" id="edu" style="margin-top:40px"></div><div class="certs" id="certs"></div></div></div></section>
 
-<section id="writing"><div class="sh"><h2><small>05</small>Writing &amp; Media</h2>
+<section id="writing"><div class="sh"><h2><small>06</small>Writing &amp; Media</h2>
  <div class="media">
   <div class="card"><h4>Substack</h4><p>Essays on AI, academia and the future of research.</p><ol id="wr"></ol>
    <a class="btn" style="margin-top:16px" href="https://maheshbasavaraj.substack.com/">Read on Substack</a></div>
@@ -170,6 +184,11 @@ $('pubf').innerHTML=yrs.map(y=>`<button data-y="${y}">${y}</button>`).join(''); 
 $('sk').innerHTML=D.skills.map(g=>`<div class="card"><h4>${esc(g.group)}</h4><div class="chips">${g.items.map(i=>`<span>${esc(i)}</span>`).join('')}</div></div>`).join('');
 $('edu').innerHTML=D.education.map(x=>`<div><b>${esc(x.degree)}</b><em>${esc(x.when)}</em><span>${esc(x.school)}</span></div>`).join('');
 $('certs').innerHTML=D.certifications.map(c=>`<div class="card"><b>${esc(c.name)}</b><span>${esc(c.by)} · ${esc(c.when)}</span></div>`).join('');
+$('proj').innerHTML=D.projects.map(x=>`<a class="card" href="${x.url}" target="_blank" rel="noopener"><span class="tech">${esc(x.tech)}</span><h4>${esc(x.name)}</h4><p>${esc(x.desc)}</p><span class="go">View code →</span></a>`).join('');
+fetch(`https://api.github.com/users/${D.github_user}/repos?sort=pushed&per_page=30`).then(r=>r.ok?r.json():Promise.reject()).then(rs=>{
+ rs=rs.filter(r=>!r.fork&&r.name!==`${D.github_user}.github.io`).slice(0,6);
+ $('live').innerHTML=rs.map(r=>`<div class="lr"><a href="${r.html_url}" target="_blank" rel="noopener">${esc(r.name)}</a><span class="lg">${esc(r.language||'')}</span><span>updated ${new Date(r.pushed_at).toLocaleDateString('en-IN',{month:'short',year:'numeric'})}</span></div>`).join('');
+}).catch(()=>{$('live').innerHTML='<span class="lm">See all repositories on <a href="https://github.com/'+D.github_user+'">GitHub</a>.</span>'});
 $('wr').innerHTML=D.writing.map(w=>`<li><a href="${w.url}" target="_blank" rel="noopener">${esc(w.title)}</a></li>`).join('');
 $('contactrow').innerHTML=D.emails.map((m,i)=>`<a class="btn ${i?'':'p'}" href="mailto:${m}">${esc(m)}</a>`).join('')+`<a class="btn" href="tel:${D.phone.replace(/\s/g,'')}">${esc(D.phone)}</a>`+D.links.map(l=>`<a class="btn" href="${l.url}" target="_blank" rel="noopener">${l.label}</a>`).join('');
 </script>
