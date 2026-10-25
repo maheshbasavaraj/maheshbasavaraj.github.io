@@ -40,23 +40,24 @@ body {{ font-family:Manrope,sans-serif; color:var(--ink); font-size:8.7pt; line-
 a {{ color:inherit; text-decoration:none; }}
 .page {{ width:210mm; height:297mm; display:grid; grid-template-columns:64mm 1fr; overflow:hidden; page-break-after:always; }}
 .page:last-child {{ page-break-after:auto; }}
-aside {{ background:var(--side); padding:13mm 7mm 9mm 10mm; border-right:1px solid var(--line); }}
+aside {{ background:var(--side); padding:10mm 7mm 7mm 10mm; border-right:1px solid var(--line); }}
 main {{ padding:14mm 11mm 12mm 9mm; }}
-.name {{ font-family:Fraunces,serif; font-weight:700; font-size:27pt; line-height:.98; letter-spacing:-.5px; color:var(--ink); }}
+.ph {{ width:24mm; height:24mm; border-radius:50%; display:block; margin-bottom:3mm; }}
+.name {{ font-family:Fraunces,serif; font-weight:700; font-size:24pt; line-height:.98; letter-spacing:-.5px; color:var(--ink); }}
 .name span {{ color:var(--acc); }}
 .role {{ margin-top:3mm; font-size:8.4pt; font-weight:600; letter-spacing:.06em; text-transform:uppercase; color:var(--acc2); }}
 .tag {{ margin-top:3.5mm; font-family:Fraunces,serif; font-size:10.5pt; line-height:1.38; color:#33404b; }}
 h3 {{ font-family:Manrope; font-size:7.6pt; font-weight:700; letter-spacing:.18em; text-transform:uppercase; color:var(--acc);
      margin:5mm 0 2.2mm; display:flex; align-items:center; gap:2.5mm; }}
 h3::after {{ content:""; flex:1; height:1px; background:var(--line); }}
-aside h3 {{ margin-top:6mm; }}
-.contact div, .contact a {{ display:block; margin-bottom:1.3mm; word-break:break-all; }}
+aside h3 {{ margin-top:3.8mm; margin-bottom:1.8mm; }}
+.contact div, .contact a {{ display:block; margin-bottom:.9mm; word-break:break-all; }}
 .contact i, .links i {{ display:block; font-style:normal; font-size:6.6pt; letter-spacing:.12em; text-transform:uppercase; color:var(--mut); }}
-.links a {{ display:flex; gap:2mm; align-items:baseline; margin-bottom:1.2mm; font-weight:600; color:var(--acc); }} .links a i {{ display:inline-block; width:15mm; flex:none; }}
-.stats {{ display:grid; grid-template-columns:1fr 1fr; gap:2.4mm 2mm; }}
+.links a {{ display:flex; gap:1.5mm; font-size:8.2pt; align-items:baseline; margin-bottom:1.2mm; font-weight:600; color:var(--acc); }} .links a i {{ display:inline-block; width:14mm; flex:none; }}
+.stats {{ display:grid; grid-template-columns:1fr 1fr; gap:1.8mm 2mm; }}
 .st b {{ display:block; font-family:Fraunces,serif; font-size:17pt; color:var(--acc); line-height:1; }}
 .st span {{ font-size:7pt; color:var(--mut); line-height:1.25; display:block; margin-top:.8mm; }}
-.sk {{ margin-bottom:2.2mm; }} .sk h4 {{ font-size:7.8pt; font-weight:700; }} .sk p {{ color:#3c4852; font-size:7.9pt; }}
+.sk {{ margin-bottom:1.6mm; }} .sk h4 {{ font-size:7.8pt; font-weight:700; }} .sk p {{ color:#3c4852; font-size:7.9pt; }}
 .ed, .ce {{ margin-bottom:2.4mm; }} .ed b, .ce b {{ display:block; font-size:8.1pt; }}
 .ed span, .ce span {{ display:block; color:#3c4852; font-size:7.7pt; }} .ed em {{ font-style:normal; color:var(--acc2); font-size:7.5pt; font-weight:600; }}
 .ce span {{ color:var(--mut); }}
@@ -79,6 +80,7 @@ ul {{ margin-top:1.2mm; padding-left:3.6mm; }} li {{ margin-bottom:.7mm; }} li::
 </style></head><body>
 <section class="page">
 <aside>
+  <img class="ph" src="assets/photo_circle.png" alt="Mahesh Basavaraj">
   <div class="name">Mahesh<br><span>Basavaraj</span></div>
   <div class="role">Asst. Professor · AI Researcher</div>
   <h3>Contact</h3>
@@ -123,4 +125,5 @@ if __name__ == "__main__":
     chrome = r"C:\Program Files\Google\Chrome\Application\chrome.exe"
     subprocess.run([chrome, "--headless=new", "--disable-gpu", "--no-pdf-header-footer", "--virtual-time-budget=8000",
                     f"--print-to-pdf={ROOT / 'Mahesh_Basavaraj_Resume.pdf'}", (ROOT / "resume.html").as_uri()], check=True)
-    print("built resume.html, index.html, Mahesh_Basavaraj_Resume.pdf")
+    import build_docx; build_docx.build(ROOT / "Mahesh_Basavaraj_Resume.docx")
+    print("built resume.html, index.html, Mahesh_Basavaraj_Resume.pdf, Mahesh_Basavaraj_Resume.docx")

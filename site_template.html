@@ -6,6 +6,7 @@
 <title>Mahesh Basavaraj — AI Researcher & Educator</title>
 <meta name="description" content="Mahesh Basavaraj — Assistant Professor (CSE, Data Science) at DSATM, AI researcher, 3 patents, 10+ publications, former Infosys & Accenture engineer.">
 <meta property="og:title" content="Mahesh Basavaraj — AI Researcher & Educator">
+<meta property="og:image" content="https://maheshbasavaraj.github.io/assets/photo.jpg">
 <meta property="og:description" content="Agentic AI, LLMs, deep learning and IoT research. 16+ years across industry and academia.">
 {{FONTS}}
 <style>
@@ -23,15 +24,17 @@ nav ul{display:flex;gap:24px;list-style:none}
 nav ul a{color:var(--mut);text-decoration:none;font-size:14px;font-weight:600}
 nav ul a:hover{color:var(--ink)}
 .cv{background:var(--ink);color:#fff!important;padding:9px 16px;border-radius:6px;font-size:14px;font-weight:700;text-decoration:none}
-header{padding:88px 0 64px;display:grid;grid-template-columns:1.55fr 1fr;gap:56px;align-items:end}
+header{padding:80px 0 64px;display:grid;grid-template-columns:1.3fr 1fr;gap:48px;align-items:center}
 .eyebrow{font-size:13px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--acc2)}
 h1{font-family:Fraunces,serif;font-size:clamp(46px,7vw,88px);line-height:.95;letter-spacing:-2px;margin:14px 0 22px}
 h1 span{color:var(--acc)}
 .lede{font-family:Fraunces,serif;font-size:22px;line-height:1.45;color:#33404b;max-width:620px}
-.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
-.btn{display:inline-flex;align-items:center;min-height:44px;padding:0 18px;border-radius:6px;border:1px solid var(--ink);color:var(--ink);text-decoration:none;font-weight:700;font-size:14px}
+.cta{display:flex;flex-wrap:wrap;gap:8px;margin-top:30px}
+.btn{display:inline-flex;align-items:center;min-height:44px;padding:0 15px;border-radius:6px;border:1px solid var(--ink);color:var(--ink);text-decoration:none;font-weight:700;font-size:14px}
 .btn.p{background:var(--acc);border-color:var(--acc);color:#fff}
 .btn:hover{transform:translateY(-1px)}
+.side{display:grid;grid-template-columns:150px 1fr;gap:28px;align-items:center}
+.hero-ph{width:150px;height:auto;aspect-ratio:1;object-fit:cover;border-radius:50%;border:3px solid var(--paper);box-shadow:0 0 0 1px var(--line)}
 .card{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:26px}
 .facts dt{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--mut)}
 .facts dd{margin:2px 0 14px;font-weight:600}
@@ -104,7 +107,7 @@ footer .btn.p{background:var(--acc2);border-color:var(--acc2)}
 footer small{color:#8b96a0}
 :focus-visible{outline:3px solid var(--acc2);outline-offset:2px}
 @media (max-width:860px){
- nav ul{display:none} header{grid-template-columns:1fr;padding-top:48px;gap:32px}
+ nav ul{display:none} .side{grid-template-columns:1fr} .hero-ph{width:140px} header{grid-template-columns:1fr;padding-top:48px;gap:32px}
  .stats{grid-template-columns:1fr 1fr}.stats div:nth-child(3){border-left:0;padding-left:0}
  .stats div{border-top:1px solid var(--line)}
  .sh{grid-template-columns:1fr;gap:20px}.sh h2{position:static}
@@ -127,7 +130,7 @@ footer small{color:#8b96a0}
   <p class="lede" id="tagline"></p>
   <div class="cta" id="cta"></div>
  </div>
- <dl class="card facts" id="facts"></dl>
+ <div class="side"><img class="hero-ph" src="assets/photo.jpg" alt="Portrait of Mahesh Basavaraj" width="600" height="600"><dl class="card facts" id="facts"></dl></div>
 </header>
 <div class="stats" id="stats"></div>
 

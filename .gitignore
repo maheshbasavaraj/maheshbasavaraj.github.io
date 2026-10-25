@@ -1,3 +1,5 @@
 probe.html
 *.png
+!assets/*.png
+_*
 __pycache__/
