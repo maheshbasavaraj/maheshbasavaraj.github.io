@@ -169,7 +169,7 @@ footer small{color:#8b96a0}
 const D=/*DATA*/null;
 const $=id=>document.getElementById(id), esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 $('tagline').textContent=D.tagline; $('summary').textContent=D.summary; $('yr').textContent=new Date().getFullYear();
-$('cta').innerHTML=`<a class="btn p" href="mailto:${D.emails[1]}">Get in touch</a><a class="btn" href="Mahesh_Basavaraj_Resume.pdf" download>Download résumé</a>`+D.links.map(l=>`<a class="btn" href="${l.url}" target="_blank" rel="noopener">${l.label}</a>`).join('');
+$('cta').innerHTML=`<a class="btn p" href="mailto:${D.emails[1]}">Get in touch</a><a class="btn" href="Mahesh_Basavaraj_Resume.pdf" download>Download résumé</a>`+D.links.filter(l=>l.label!=='Website').map(l=>`<a class="btn" href="${l.url}" target="_blank" rel="noopener">${l.label}</a>`).join('');
 $('facts').innerHTML=`<dt>Currently</dt><dd>${esc(D.academic[0].role)}<br><span style="color:var(--acc)">${esc(D.academic[0].org)}</span></dd><dt>Research</dt><dd>Agentic AI · LLMs · Deep Learning · IoT</dd><dt>Based in</dt><dd>${esc(D.location)}</dd><dt>Email</dt><dd><a href="mailto:${D.emails[1]}">${esc(D.emails[1])}</a></dd>`;
 $('stats').innerHTML=D.stats.map(s=>`<div><b>${esc(s.n)}</b><span>${esc(s.l)}</span></div>`).join('');
 const job=(j,k)=>`<div class="job ${j.current?'now':''}"><div class="dt">${esc(j.dates)} · ${k}</div><h3>${esc(j.role)}</h3><div class="org">${esc(j.org)}</div><ul>${j.points.map(p=>`<li>${esc(p)}</li>`).join('')}</ul></div>`;
@@ -190,7 +190,7 @@ fetch(`https://api.github.com/users/${D.github_user}/repos?sort=pushed&per_page=
  $('live').innerHTML=rs.map(r=>`<div class="lr"><a href="${r.html_url}" target="_blank" rel="noopener">${esc(r.name)}</a><span class="lg">${esc(r.language||'')}</span><span>updated ${new Date(r.pushed_at).toLocaleDateString('en-IN',{month:'short',year:'numeric'})}</span></div>`).join('');
 }).catch(()=>{$('live').innerHTML='<span class="lm">See all repositories on <a href="https://github.com/'+D.github_user+'">GitHub</a>.</span>'});
 $('wr').innerHTML=D.writing.map(w=>`<li><a href="${w.url}" target="_blank" rel="noopener">${esc(w.title)}</a></li>`).join('');
-$('contactrow').innerHTML=D.emails.map((m,i)=>`<a class="btn ${i?'':'p'}" href="mailto:${m}">${esc(m)}</a>`).join('')+`<a class="btn" href="tel:${D.phone.replace(/\s/g,'')}">${esc(D.phone)}</a>`+D.links.map(l=>`<a class="btn" href="${l.url}" target="_blank" rel="noopener">${l.label}</a>`).join('');
+$('contactrow').innerHTML=D.emails.map((m,i)=>`<a class="btn ${i?'':'p'}" href="mailto:${m}">${esc(m)}</a>`).join('')+`<a class="btn" href="tel:${D.phone.replace(/\s/g,'')}">${esc(D.phone)}</a>`+D.links.filter(l=>l.label!=='Website').map(l=>`<a class="btn" href="${l.url}" target="_blank" rel="noopener">${l.label}</a>`).join('');
 </script>
 </body>
 </html>
