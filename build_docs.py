@@ -219,90 +219,102 @@ def build_publications(out):
 
 
 # ============================================================ 2. COVER LETTER
-LETTER_BODY = [
-    ("Dear Members of the Selection Committee,", "salutation"),
+def letter_side(c):
+    name_block(c, PHOTO, "Educator · AI Researcher")
+    contact_block(c, D, IDS)
+    heading(c, "At a glance")
+    stat_grid(c, [("8", "years teaching CS"), ("11", "peer-reviewed papers"),
+                  ("4", "patents & applications"), ("8", "teaching tools built")])
 
-    ("I am applying for the position of Assistant Professor, Computer Science, at the UNSW Bengaluru campus. I "
-     "am currently Assistant Professor in CSE (Data Science) at DSATM, Bengaluru, and a doctoral researcher at "
-     "Visvesvaraya Technological University. My sixteen years split evenly between the two worlds this campus "
-     "sits between: eight years building banking and capital-markets software at Infosys and Accenture, and "
-     "eight years teaching computer science and publishing applied AI research. What I would most want you to "
-     "know about me is simple: when a course needs software to make its ideas visible, I build it.", "p"),
 
-    ("CPU Rush is the clearest example. My Operating Systems students do not read about scheduling, paging, "
-     "deadlock and file systems \u2014 they predict how each behaves, commit to an answer, and a server grades "
-     "every decision. Data Structure Design Studio turns data structures into a progressive, scored decision "
-     "track under changing constraints. Game Forge generates single-file browser games, one concept each, from "
-     "an editable design doctrine. ButterCloud Quiz asks students to choose the best stack and architecture for "
-     "Eight such tools are public at github.com/maheshbasavaraj, most in daily "
-     "classroom use, and every new course I teach keeps producing more \u2014 students decide, then watch the "
-     "machine answer, which is where the learning actually happens.", "p"),
+def tool(c, name, desc):
+    p = para(c, after=2.5, line=1.14)
+    pf = p.paragraph_format; pf.left_indent = Mm(3.6); pf.first_line_indent = Mm(-3.6)
+    run(p, "▪ ", size=7, color=ACC2)
+    run(p, name + " — ", size=8.9, color=INK, bold=True)
+    run(p, desc, size=8.9, color=BODY)
 
-    ("I have taught object-oriented programming, data structures, operating systems, database systems and deep "
-     "learning at undergraduate and postgraduate level, and I supervise final-year capstone projects end to "
-     "end. At DSATM I designed and led a six-month Agentic AI immersion programme with Capabl and run faculty "
-     "development programmes for colleagues. I am ready to adopt UNSW's myExperience framework and the "
-     "Integrated Curriculum Framework, to work within standards-based, criterion-referenced assessment, and to "
-     "complete Ready to Teach alongside colleagues from Kensington.", "p"),
 
-    ("My research — Agentic AI, large language models and spatio-temporal deep learning — has produced three utility patents, a published patent application in synchronised social-VR IoT networks, and eleven peer-reviewed papers, including recent work on multi-scale spatio-temporal attention networks, lightweight multi-agent Q-learning for wireless IoT, and LLM-based agent systems as a route to general intelligence. The campus's focus on artificial intelligence, and its Centre of Excellence in AI and Innovation with Deloitte India, is where I want to work: applied research that produces both publications and capability.", "p"),
+def letter_main(c):
+    doc_title(c, "Cover Letter", TARGET)
 
-    ("Eight years in industry also taught me what employers expect from a computer science graduate. At Infosys I worked on Finacle, the universal banking platform; at Accenture I built capital-markets systems for international clients. I would bring that into work-integrated learning — industry projects, internship pipelines, and assessment built around real repositories, code review and delivery discipline.", "p"),
+    p = para(c, after=5, line=1.15)
+    run(p, DATE + "  ·  ", size=8.3, color=MUT)
+    run(p, "The Selection Committee — Faculty Recruitment · UNSW Bengaluru · Embassy Manyata Business Park, "
+           "Nagavara, Bengaluru 560045", size=8.3, color=MUT)
 
-    ("UNSW Bengaluru offers a top-20 global degree with local consequence, and Progress for All is a mission I can teach to. The chance to help establish a new campus's standards rather than inherit them is rare. I am based in Bengaluru, ready from the first teaching period, and glad to demonstrate CPU Rush live or teach a class on any topic in the curriculum.", "p"),
-]
+    p = para(c, before=3, after=6, line=1.15)
+    run(p, "Re:  ", size=9.4, color=ACC, bold=True)
+    run(p, "Application for Assistant Professor, Computer Science — UNSW Bengaluru Campus", size=9.4, color=INK, bold=True)
+
+    p = para(c, after=6, line=1.18)
+    run(p, "Dear Members of the Selection Committee,", size=9.4, color=BODY)
+
+    p = para(c, after=5, line=1.18)
+    run(p, "I am applying for the Assistant Professor, Computer Science position at the UNSW Bengaluru campus. I "
+           "am currently Assistant Professor in CSE (Data Science) at DSATM, Bengaluru, and a doctoral researcher "
+           "at Visvesvaraya Technological University. My sixteen years divide evenly between industry and "
+           "academia, and both halves taught me the same habit: when a course needs software to make its ideas "
+           "visible, I build it.", size=9.3, color=BODY)
+
+    heading(c, "Teaching Software I Have Built")
+    tool(c, "CPU Rush", "OS students predict scheduling, paging, deadlock and file systems, commit to an answer, "
+                        "and a server grades every decision.")
+    tool(c, "Data Structure Design Studio", "a progressive, scored decision track under changing constraints.")
+    tool(c, "Game Forge", "generates single-file browser games, one concept each.")
+    tool(c, "ButterCloud Quiz", "students choose the best stack and architecture for realistic requirements.")
+    p = para(c, before=2, after=5, line=1.16)
+    run(p, "Eight such tools are public at github.com/maheshbasavaraj and in daily classroom use, and every course "
+           "I teach produces more. These are not demonstrations — they are how the syllabus is taught.", size=9.3, color=BODY)
+
+    heading(c, "How I Teach")
+    p = para(c, after=5, line=1.18)
+    run(p, "I teach through case studies and from first principles. I start with the basic necessity of a topic "
+           "— why it exists, what breaks without it — and only then show how it works. The why earns a student's "
+           "attention; the how earns the skill. Wherever a subject allows, the learning is hands-on: students "
+           "decide, watch the machine answer, and correct themselves. They leave with a mental model they can "
+           "defend, not definitions they can recite.", size=9.3, color=BODY)
+
+    heading(c, "Teaching Experience")
+    p = para(c, after=5, line=1.18)
+    run(p, "I have taught object-oriented programming, data structures, operating systems, database systems and "
+           "deep learning at undergraduate and postgraduate level, and I supervise capstone projects end to end. "
+           "At DSATM I designed and led a six-month Agentic AI immersion with Capabl and run faculty development "
+           "programmes for colleagues. I am ready to adopt myExperience and the Integrated Curriculum Framework, "
+           "to work within standards-based assessment, and to complete Ready to Teach.", size=9.3, color=BODY)
+
+    heading(c, "Research and Industry")
+    p = para(c, after=5, line=1.18)
+    run(p, "My research in Agentic AI, large language models and spatio-temporal deep learning has produced three "
+           "utility patents, a published application and eleven peer-reviewed papers — work that fits this "
+           "campus's AI focus and its Centre of Excellence with Deloitte India. Eight years at Infosys and "
+           "Accenture let me build work-integrated learning around real repositories, code review and delivery "
+           "discipline.", size=9.3, color=BODY)
+
+    p = para(c, before=2, after=6, line=1.18)
+    run(p, "UNSW Bengaluru offers a top-20 global degree with local consequence, and Progress for All is a mission "
+           "I can teach to. Helping establish a new campus's standards rather than inherit them is rare. I am "
+           "based in Bengaluru, ready from the first teaching period, and glad to demonstrate CPU Rush live or "
+           "teach a class on any topic in the curriculum.", size=9.3, color=BODY)
+
+    p = para(c, before=6, after=1, line=1.2)
+    run(p, "Yours sincerely,", size=9.3, color=BODY)
+    p = para(c, before=10, after=0, line=1.05)
+    run(p, "Mahesh Basavaraj", size=12.5, color=INK, bold=True, font=HEAD)
+    p = para(c, after=0, line=1.05)
+    run(p, "Assistant Professor, CSE (Data Science) · DSATM, Bengaluru", size=8.4, color=MUT)
+
+    p = para(c, before=8, after=0, line=1.2)
+    para_border_bottom(p, "DCDFE2", sz=4, space=4)
+    p = para(c, before=3, after=0, line=1.25)
+    run(p, "Enclosures:  ", size=8.2, color=ACC, bold=True, caps=True, spacing=10)
+    run(p, "Curriculum Vitae  ·  Research Publications & Patents  ·  Teaching Methodology", size=8.4, color=MUT)
 
 
 def build_letter(out):
     doc = Document()
-    s = single_page(doc, top=14, bottom=13, left=21, right=21)
-
-    # letterhead
-    p = para(doc, first=True, after=0, line=1.0)
-    run(p, "Mahesh Basavaraj", size=19, color=INK, bold=True, font=HEAD)
-    p = para(doc, after=1, line=1.0)
-    run(p, "Assistant Professor, Computer Science & Engineering (Data Science) \u00b7 DSATM, Bengaluru", size=8.6, color=MUT)
-    p = para(doc, after=3, line=1.0)
-    run(p, "Bengaluru, India  \u00b7  ", size=8.6, color=MUT)
-    hyperlink(p, "mailto:BMaheshbasavaraj@gmail.com", "BMaheshbasavaraj@gmail.com", size=8.6, bold=False)
-    run(p, "  \u00b7  +91 98866 42542  \u00b7  ", size=8.6, color=MUT)
-    hyperlink(p, "https://maheshbasavaraj.github.io/", "maheshbasavaraj.github.io", size=8.6, bold=False)
-    run(p, "  \u00b7  ", size=8.6, color=MUT)
-    hyperlink(p, "https://www.linkedin.com/in/mahesh-basavaraj-57189515/", "LinkedIn", size=8.6, bold=False)
-    para_border_bottom(p, TEAL, sz=12, space=6)
-
-    p = para(doc, before=7, after=6, line=1.0)
-    run(p, DATE, size=9, color=MUT)
-
-    for line, bold in (("The Selection Committee \u2014 Faculty Recruitment", True),
-                       ("UNSW Bengaluru", True),
-                       ("Embassy Manyata Business Park, Nagavara", False),
-                       ("Bengaluru 560045, Karnataka, India", False)):
-        p = para(doc, after=0, line=1.12)
-        run(p, line, size=9.2, color=(INK if bold else MUT), bold=bold)
-
-    p = para(doc, before=9, after=7, line=1.15)
-    run(p, "Re:  ", size=9.6, color=ACC, bold=True)
-    run(p, "Application for Assistant Professor, Computer Science \u2014 UNSW Bengaluru Campus", size=9.6, color=INK, bold=True)
-
-    for text, kind in LETTER_BODY:
-        p = para(doc, before=(0 if kind == "salutation" else 5), after=(6 if kind == "salutation" else 5), line=1.18)
-        run(p, text, size=9.5, color=BODY)
-
-    p = para(doc, before=7, after=1, line=1.2)
-    run(p, "Yours sincerely,", size=9.5, color=BODY)
-    p = para(doc, before=11, after=0, line=1.05)
-    run(p, "Mahesh Basavaraj", size=12.5, color=INK, bold=True, font=HEAD)
-    p = para(doc, after=0, line=1.05)
-    run(p, "Assistant Professor, CSE (Data Science) \u00b7 DSATM, Bengaluru", size=8.4, color=MUT)
-
-    p = para(doc, before=9, after=0, line=1.2)
-    para_border_bottom(p, "DCDFE2", sz=4, space=4)
-    p = para(doc, before=3, after=0, line=1.25)
-    run(p, "Enclosures:  ", size=8.2, color=ACC, bold=True, caps=True, spacing=10)
-    run(p, "Curriculum Vitae  \u00b7  Research Publications & Patents  \u00b7  Teaching Methodology", size=8.4, color=MUT)
-
-    return finish(doc, out, title="Mahesh Basavaraj \u2014 Cover Letter, UNSW Bengaluru", shrink=False)
+    two_col(doc, [(letter_side, letter_main)], row1_trim=10)
+    return finish(doc, out, title="Mahesh Basavaraj — Cover Letter, UNSW Bengaluru")
 
 
 # ====================================================== 3. TEACHING METHODOLOGY
@@ -312,6 +324,10 @@ def teach_side1(c):
     heading(c, "Teaching Snapshot")
     stat_grid(c, [("8", "years teaching CS"), ("6+", "courses taught"),
                   ("2", "programmes designed"), ("7", "certifications & FDPs")])
+    heading(c, "Approach")
+    p = para(c, after=0, line=1.15)
+    run(p, "First principles, case studies, hands-on \u2014 the why before the how, and a decision to make "
+           "in every class.", size=8.2, color=MUT)
     heading(c, "Courses Taught")
     for n, w in (("Operating Systems", "UG \u00b7 core"), ("Data Structures & Algorithms", "UG \u00b7 core"),
                  ("Object-Oriented Programming (Java)", "UG \u00b7 core"),
@@ -342,6 +358,11 @@ def teach_main1(c):
            "carry into a codebase \u2014 which is why my courses use real repositories, code review and delivery "
            "discipline, not only examinations.", size=9.3, color=BODY)
 
+    p = para(c, after=4, line=1.2)
+    run(p, "My method is first-principles and case-study led. A topic opens with the basic necessity of the "
+           "thing \u2014 why it exists, what breaks without it \u2014 and only then moves to how it works; the "
+           "why earns attention, the how earns the skill. From there we work through case studies students "
+           "can actually run, and wherever the subject allows, the learning is hands-on.", size=9.3, color=BODY)
     heading(c, "Five Design Principles")
     principles = [
         ("Start from the misconception, not the syllabus.",
