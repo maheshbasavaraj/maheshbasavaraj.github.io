@@ -52,7 +52,7 @@ h3::after {{ content:""; flex:1; height:1px; background:var(--line); }}
 aside h3 {{ margin-top:6mm; }}
 .contact div, .contact a {{ display:block; margin-bottom:1.3mm; word-break:break-all; }}
 .contact i, .links i {{ display:block; font-style:normal; font-size:6.6pt; letter-spacing:.12em; text-transform:uppercase; color:var(--mut); }}
-.links {{ display:grid; grid-template-columns:auto 1fr; gap:1.2mm 2.5mm; align-items:baseline; }} .links a {{ display:contents; font-weight:600; color:var(--acc); }} .links a i {{ display:inline; }}
+.links a {{ display:flex; gap:2mm; align-items:baseline; margin-bottom:1.2mm; font-weight:600; color:var(--acc); }} .links a i {{ display:inline-block; width:15mm; flex:none; }}
 .stats {{ display:grid; grid-template-columns:1fr 1fr; gap:2.4mm 2mm; }}
 .st b {{ display:block; font-family:Fraunces,serif; font-size:17pt; color:var(--acc); line-height:1; }}
 .st span {{ font-size:7pt; color:var(--mut); line-height:1.25; display:block; margin-top:.8mm; }}
