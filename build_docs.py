@@ -19,7 +19,7 @@ ROOT = pathlib.Path(__file__).parent
 D = json.loads((ROOT / "data.json").read_text(encoding="utf-8"))
 PHOTO = ROOT / "assets" / "photo_circle.png"
 
-TARGET = "Assistant Professor, Computer Science \u2014 UNSW Bengaluru Campus"
+TARGET = "Prepared for the Assistant Professor (Computer Science) role \u2014 UNSW Bengaluru Campus"
 DATE = "25 October 2026"
 
 # Verified identifiers (ORCID + Scholar confirmed Oct 2026; Scopus ID as supplied by Mahesh)
@@ -125,7 +125,7 @@ def pubs_side1(c):
 
 def pubs_main1(c):
     doc_title(c, "Research Publications & Patents", TARGET)
-    heading(c, "Research Profile", first=True)
+    heading(c, "Research Profile")
     p = para(c, after=5, line=1.2)
     run(p, "My research asks how intelligent systems can be made reliable and useful outside the laboratory: how "
            "agentic systems built on large language models coordinate to solve multi-step problems, how deep models "
@@ -222,48 +222,34 @@ def build_publications(out):
 LETTER_BODY = [
     ("Dear Members of the Selection Committee,", "salutation"),
 
-    ("I am writing to apply for the position of Assistant Professor, Computer Science, at the UNSW Bengaluru "
-     "campus. I am currently Assistant Professor in Computer Science & Engineering (Data Science) at Dayananda "
-     "Sagar Academy of Technology & Management, Bengaluru, and a doctoral researcher at Visvesvaraya Technological "
-     "University. My career spans sixteen years across the two worlds this campus sits between: eight years "
-     "building enterprise and banking software at Infosys and Accenture, and eight years teaching computer "
-     "science and publishing applied AI research in Bengaluru.", "p"),
+    ("I am applying for the position of Assistant Professor, Computer Science, at the UNSW Bengaluru campus. I "
+     "am currently Assistant Professor in CSE (Data Science) at DSATM, Bengaluru, and a doctoral researcher at "
+     "Visvesvaraya Technological University. My sixteen years split evenly between the two worlds this campus "
+     "sits between: eight years building banking and capital-markets software at Infosys and Accenture, and "
+     "eight years teaching computer science and publishing applied AI research. What I would most want you to "
+     "know about me is simple: when a course needs software to make its ideas visible, I build it.", "p"),
 
-    ("Teaching is the part of my work I have invested in most deliberately. At DSATM I designed and led a "
-     "six-month Agentic AI immersion programme for students in partnership with Capabl, and I run faculty "
-     "development programmes for colleagues. I have taught object-oriented programming, data structures, "
-     "operating systems, database systems and deep learning to undergraduate and postgraduate students, and I "
-     "supervise final-year capstone projects end to end. My approach is constructionist: students should build "
-     "systems and watch them behave, not memorise definitions. To make that possible at scale I build my own "
-     "teaching tools \u2014 an interactive Socratic game in which students predict operating-system scheduling, "
-     "paging and deadlock behaviour and are graded on every decision; a progressive, scored decision track for "
-     "learning data structures; and classroom CI/CD projects where every push is tested and gated. These are "
-     "public on GitHub and in daily classroom use. I am ready to adopt UNSW's myExperience design framework and "
-     "the Integrated Curriculum Framework, to work within standards-based, criterion-referenced assessment, and "
-     "to complete the Ready to Teach programme alongside colleagues from Kensington.", "p"),
+    ("CPU Rush is the clearest example. My Operating Systems students do not read about scheduling, paging, "
+     "deadlock and file systems \u2014 they predict how each behaves, commit to an answer, and a server grades "
+     "every decision. Data Structure Design Studio turns data structures into a progressive, scored decision "
+     "track under changing constraints. Game Forge generates single-file browser games, one concept each, from "
+     "an editable design doctrine. ButterCloud Quiz asks students to choose the best stack and architecture for "
+     "Eight such tools are public at github.com/maheshbasavaraj, most in daily "
+     "classroom use, and every new course I teach keeps producing more \u2014 students decide, then watch the "
+     "machine answer, which is where the learning actually happens.", "p"),
 
-    ("My research is in Agentic AI, large language models and spatio-temporal deep learning. I hold three "
-     "utility patents \u2014 in adaptive quality of service for heterogeneous IoT networks, ethical AI and bias "
-     "mitigation, and machine-assisted agricultural automation \u2014 together with a published patent "
-     "application in synchronised social-VR IoT networks, and more than ten peer-reviewed papers, including "
-     "recent work on multi-scale spatio-temporal networks with frequency\u2013spatial parallel attention, "
-     "lightweight multi-agent Q-learning for wireless IoT, and LLM-based agent systems as a route to general "
-     "intelligence. The campus's focus on artificial intelligence, and its Centre of Excellence in AI and "
-     "Innovation with Deloitte India, is precisely where I want to work: applied, industry-connected research "
-     "that produces both publications and capability.", "p"),
+    ("I have taught object-oriented programming, data structures, operating systems, database systems and deep "
+     "learning at undergraduate and postgraduate level, and I supervise final-year capstone projects end to "
+     "end. At DSATM I designed and led a six-month Agentic AI immersion programme with Capabl and run faculty "
+     "development programmes for colleagues. I am ready to adopt UNSW's myExperience framework and the "
+     "Integrated Curriculum Framework, to work within standards-based, criterion-referenced assessment, and to "
+     "complete Ready to Teach alongside colleagues from Kensington.", "p"),
 
-    ("Eight years in industry also taught me what employers expect from a computer science graduate, and how to "
-     "build that expectation into assessment. At Infosys I worked on Finacle, the universal banking platform; at "
-     "Accenture I built capital-markets systems for international clients. I can bring those networks and that "
-     "experience into work-integrated learning \u2014 authentic industry projects, internship pipelines, and "
-     "assessment built around real repositories, code review and delivery discipline.", "p"),
+    ("My research — Agentic AI, large language models and spatio-temporal deep learning — has produced three utility patents, a published patent application in synchronised social-VR IoT networks, and eleven peer-reviewed papers, including recent work on multi-scale spatio-temporal attention networks, lightweight multi-agent Q-learning for wireless IoT, and LLM-based agent systems as a route to general intelligence. The campus's focus on artificial intelligence, and its Centre of Excellence in AI and Innovation with Deloitte India, is where I want to work: applied research that produces both publications and capability.", "p"),
 
-    ("What draws me to UNSW Bengaluru specifically is a top-20 global degree with local consequence. Progress "
-     "for All is a mission I can teach to, and the chance to help establish the standards of a new campus rather "
-     "than inherit them is rare. I am based in Bengaluru and ready to contribute from the first teaching period.", "p"),
+    ("Eight years in industry also taught me what employers expect from a computer science graduate. At Infosys I worked on Finacle, the universal banking platform; at Accenture I built capital-markets systems for international clients. I would bring that into work-integrated learning — industry projects, internship pipelines, and assessment built around real repositories, code review and delivery discipline.", "p"),
 
-    ("I would welcome the opportunity to discuss the role, and I am glad to deliver a teaching demonstration on "
-     "any topic in the computer science curriculum.", "p"),
+    ("UNSW Bengaluru offers a top-20 global degree with local consequence, and Progress for All is a mission I can teach to. The chance to help establish a new campus's standards rather than inherit them is rare. I am based in Bengaluru, ready from the first teaching period, and glad to demonstrate CPU Rush live or teach a class on any topic in the curriculum.", "p"),
 ]
 
 
@@ -343,7 +329,7 @@ def teach_side1(c):
 
 def teach_main1(c):
     doc_title(c, "Teaching Methodology & Philosophy", TARGET)
-    heading(c, "Why I Teach the Way I Do", first=True)
+    heading(c, "Why I Teach the Way I Do")
     p = para(c, after=5, line=1.2)
     run(p, "Students rarely fail computer science because it is too hard. They fail because the first encounter is "
            "abstract: memory is a diagram, a scheduler is a paragraph, a model is a black box. My job is to make "
